@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="my.lsh.cloud.dao.PaymentDao">
+
+<!--    int createPayment(PaymentEntity paymentEntity);-->
+
+<!--    PaymentEntity getPaymentById(@Param("id") Integer id);-->
+
+    <resultMap id="BaseResultMap" type="my.lsh.cloud.entities.PaymentEntity">
+        <id column="id" property="id" jdbcType="INTEGER"></id>
+        <id column="serial" property="serial" jdbcType="VARCHAR"></id>
+    </resultMap>
+    <select id="getPaymentById" parameterType="int" resultMap="BaseResultMap">
+        select * from tbl_payment where id = #{id}
+    </select>
+
+    <select id="findAll" resultMap="BaseResultMap">
+        select * from tbl_payment
+    </select>
+
+    <insert id="createPayment" parameterType="my.lsh.cloud.entities.PaymentEntity" useGeneratedKeys="true" keyProperty="id">
+        <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">select LAST_INSERT_ID()</selectKey>
+        insert into tbl_payment(serial) values (#{serial})
+    </insert>
+</mapper>

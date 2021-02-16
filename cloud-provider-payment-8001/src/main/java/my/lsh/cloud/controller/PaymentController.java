@@ -16,13 +16,14 @@ public class PaymentController {
     private PaymentServiceI paymentService;
 
     @PostMapping("/add")
-    public CommonResult create(PaymentEntity paymentEntity) {
+    public CommonResult create(@RequestBody PaymentEntity paymentEntity) {
+        log.info("添加的实例：" + paymentEntity);
         Integer i = paymentService.create(paymentEntity);
         if(i > 0){
             log.info("******添加成功！");
-            return new CommonResult<Integer>(200, "添加成功！", i);
+            return new CommonResult(200, "添加成功！", i);
         }
-        return new CommonResult<Integer>(200, "添加失败！", 0);
+        return new CommonResult(200, "添加失败！", 0);
     }
 
     @GetMapping("/get/{id}")
@@ -30,8 +31,9 @@ public class PaymentController {
         PaymentEntity payment = paymentService.getPaymentById(id);
 
         if (payment != null) {
-            return new CommonResult<PaymentEntity>(200, "查询成功！", payment);
+            log.info("******查询成功，结果：" + payment);
+            return new CommonResult(200, "查询成功！", payment);
         }
-        return new CommonResult<PaymentEntity>(200, "查询失败，无此id：" + id + "的记录！", payment);
+        return new CommonResult(200, "查询失败，无此id：" + id + "的记录！", payment);
     }
 }

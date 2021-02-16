@@ -11,7 +11,7 @@
         <id column="id" property="id" jdbcType="INTEGER"></id>
         <id column="serial" property="serial" jdbcType="VARCHAR"></id>
     </resultMap>
-    <select id="getPaymentById" parameterType="int" resultMap="BaseResultMap">
+    <select id="getPaymentById" parameterType="long" resultMap="BaseResultMap">
         select * from tbl_payment where id = #{id}
     </select>
 

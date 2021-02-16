@@ -1,4 +1,4 @@
-package my.lsh.cloud.entities.service;
+package my.lsh.cloud.service.impl;
 
 import my.lsh.cloud.dao.PaymentDao;
 import my.lsh.cloud.entities.PaymentEntity;

@@ -6,5 +6,5 @@ public interface PaymentServiceI {
 
     int create(PaymentEntity paymentEntity);
 
-    PaymentEntity getPaymentById(Integer id);
+    PaymentEntity getPaymentById(Long id);
 }

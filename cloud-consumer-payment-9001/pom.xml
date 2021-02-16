@@ -50,6 +50,7 @@
         <dependency>
             <groupId>my.lsh</groupId>
             <artifactId>cloud-common-api</artifactId>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
 

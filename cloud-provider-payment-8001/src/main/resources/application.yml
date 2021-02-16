@@ -41,17 +41,17 @@ mybatis:
   mapper-locations: classpath:mybatis/mapper/*.xml
   type-aliases-package: my.lsh.cloud.entities
 
-#eureka:
-#  client:
-#    service-url:
-#      # defaultZone: http://localhost:7001/eureka/
-#      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/  # 集群
-#  instance:
-#    instance-id: spring-cloud-dept-provider-8001  # 指定服务的id
-#    prefer-ip-address: true # 使用ip地址注册
-#
-#info:
-#  app.name: lsh-spring-cloud-demo-v2.0
-#  companyname: lsh.my
-#  build.artifactId: $project.artifactId$
-#  build.version: $project.version$
+eureka:
+  client:
+    service-url:
+#      defaultZone: http://localhost:7001/eureka/
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/  # 集群
+  instance:
+    instance-id: cloud-provider-payment-8001  # 指定服务的id
+    prefer-ip-address: true # 使用ip地址注册
+
+info:
+  app.name: lsh-spring-cloud-demo-v2.0
+  companyname: lsh.my
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$

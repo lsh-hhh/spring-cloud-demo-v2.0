@@ -21,6 +21,7 @@
         <module>cloud-common-api</module>
         <module>cloud-eureka-server-7001</module>
         <module>cloud-eureka-server-7002</module>
+        <module>cloud-eureka-server-7003</module>
     </modules>
 
     <properties>
@@ -103,6 +104,16 @@
                 <configuration>
                     <fork>true</fork>
                     <addResources>true</addResources>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <delimiters>
+                        <delimiter>$</delimiter>
+                    </delimiters>
                 </configuration>
             </plugin>
         </plugins>

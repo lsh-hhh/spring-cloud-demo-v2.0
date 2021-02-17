@@ -16,12 +16,16 @@
 
     <modules>
         <module>cloud-provider-payment-8001</module>
-        <module>cloud-provider-order-8005</module>
+        <module>cloud-consumer-order-zk-80</module>
         <module>cloud-consumer-payment-9001</module>
         <module>cloud-common-api</module>
         <module>cloud-eureka-server-7001</module>
         <module>cloud-eureka-server-7002</module>
         <module>cloud-eureka-server-7003</module>
+        <module>cloud-provider-payment-8002</module>
+        <module>cloud-provider-payment-zk-8005</module>
+        <module>cloud-provider-payment-consul-8006</module>
+        <module>cloud-consumer-order-consul-80</module>
     </modules>
 
     <properties>

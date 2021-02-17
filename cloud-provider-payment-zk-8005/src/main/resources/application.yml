@@ -1,0 +1,25 @@
+server:
+  port: 8005
+
+spring:
+  application:
+    name: cloud-provider-payment-zk
+  datasource:
+    username: root
+    password: 123
+    url: jdbc:mysql://localhost:3306/cloud-v2?serverTimezone=UTC&useUnicode=true&SSL=false
+    type: com.alibaba.druid.pool.DruidDataSource
+  cloud:
+    zookeeper:
+      connect-string: localhost:2181
+
+mybatis:
+  config-location: classpath:mybatis/mybatisConfig.xml
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  type-aliases-package: my.lsh.cloud.entities
+
+info:
+  app.name: lsh-spring-cloud-demo-v2.0
+  companyname: lsh.my
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$

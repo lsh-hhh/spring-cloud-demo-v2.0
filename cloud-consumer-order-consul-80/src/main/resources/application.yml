@@ -1,0 +1,21 @@
+server:
+  port: 80
+
+spring:
+  application:
+    name: cloud-consumer-order-consul
+  # consul配置
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        hostname: localhost
+        service-name: ${spring.application.name}
+        health-check-url: http://192.168.1.4/actuator/health # 使用127.0.0.1连接不通
+
+info:
+  app.name: lsh-spring-cloud-demo-v2.0
+  companyname: lsh.my
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$

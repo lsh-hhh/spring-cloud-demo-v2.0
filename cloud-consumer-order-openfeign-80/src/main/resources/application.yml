@@ -24,3 +24,7 @@ info:
 feign:
   hystrix:
     enabled: true
+
+logging:
+  level:
+    my.lsh.cloud.service.PaymentFeignService: debug

@@ -19,3 +19,7 @@ info:
   companyname: lsh.my
   build.artifactId: $project.artifactId$
   build.version: $project.version$
+
+feign:
+  hystrix:
+    enabled: true

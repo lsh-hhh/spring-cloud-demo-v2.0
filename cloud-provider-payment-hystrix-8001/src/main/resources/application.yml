@@ -1,0 +1,31 @@
+server:
+  port: 8001
+
+spring:
+  application:
+    name: cloud-provider-payment
+  datasource:
+    username: root
+    password: 123
+    url: jdbc:mysql://localhost:3306/cloud-v2?serverTimezone=UTC&useUnicode=true
+    type: com.alibaba.druid.pool.DruidDataSource
+
+eureka:
+  client:
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+  instance:
+    instance-id: cloud-provider-payment-hystrix-8001
+
+mybatis:
+  config-location: classpath:mybatis/mybatisConfig.xml
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  type-aliases-package: my.lsh.cloud.entities
+
+
+info:
+  app.name: lsh-spring-cloud-demo-v2.0
+  companyname: lsh.my
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$

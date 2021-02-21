@@ -1,0 +1,11 @@
+server:
+  port: 3366
+spring:
+  profiles:
+    active: dev
+  cloud:
+    config:
+      label: master
+      name: application-config-client-bus
+      profile: dev  # 这几个属性组合后为全名 application-config-client-dev，可以不配激活环境
+      uri: http://localhost:3344

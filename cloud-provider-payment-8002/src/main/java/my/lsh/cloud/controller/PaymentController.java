@@ -54,4 +54,12 @@ public class PaymentController {
         List<ServiceInstance> instances = discoveryClient.getInstances("cloud-provider-payment");
         return new CommonResult(200, "微服务cloud-provider-payment信息", instances);
     }
+
+    @GetMapping("/zipkin")
+    public CommonResult zipkin(){
+        log.info("zipkin测试");
+
+        String msg = "zipkin测试 ☺";
+        return new CommonResult(200, "微服务cloud-provider-payment信息", msg);
+    }
 }

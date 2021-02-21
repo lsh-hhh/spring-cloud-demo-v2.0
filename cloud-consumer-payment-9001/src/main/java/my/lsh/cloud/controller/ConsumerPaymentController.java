@@ -43,4 +43,12 @@ public class ConsumerPaymentController {
         log.info(" 请求地址：" + url + "\t" + "端口号：" + serverPort);
         return restTemplate.getForObject(url, CommonResult.class);
     }
+
+
+    @GetMapping("/zipkin")
+    public CommonResult zipkin(){
+        log.info("zipkin测试");
+        String url = BASE_URL + "/payment/zipkin";
+        return restTemplate.getForObject(url, CommonResult.class);
+    }
 }

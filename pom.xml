@@ -30,6 +30,12 @@
         <module>cloud-provider-payment-hystrix-8001</module>
         <module>cloud-consumer-payment-hystrix-dashboard-9002</module>
         <module>cloud-gateway-9527</module>
+        <module>cloud-config-server-3344</module>
+        <module>cloud-config-client-3355</module>
+        <module>cloud-config-client-3366</module>
+        <module>cloud-stream-rabbitmq-provider-8801</module>
+        <module>cloud-stream-rabbitmq-consumer-8802</module>
+        <module>cloud-stream-rabbitmq-consumer-8803</module>
     </modules>
 
     <properties>
@@ -42,6 +48,7 @@
         <mysql.version>8.0.11</mysql.version>
         <druid.version>1.1.16</druid.version>
         <mybatis.spring.boot.version>1.3.0</mybatis.spring.boot.version>
+        <huTool.version>5.1.0</huTool.version>
     </properties>
 
     <dependencyManagement>
@@ -98,6 +105,12 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-project-info-reports-plugin</artifactId>
                 <version>3.0.0</version>
+            </dependency>
+
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${huTool.version}</version>
             </dependency>
 
         </dependencies>

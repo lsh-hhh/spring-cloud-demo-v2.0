@@ -12,6 +12,11 @@
     <packaging>jar</packaging>
 
     <dependencies>
+        <!-- zipkin分布式链路追踪 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-zipkin</artifactId>
+        </dependency>
         <!-- 必导 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>

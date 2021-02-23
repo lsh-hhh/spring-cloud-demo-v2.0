@@ -1,0 +1,18 @@
+server:
+  port: 9001
+
+spring:
+  application:
+    name: cloud-alibaba-nacos-provider
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        metadata:
+          name: nacos-9001
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

@@ -40,6 +40,14 @@
         <module>cloud-alibaba-nacos-provider-9002</module>
         <module>cloud-alibaba-nacos-consumer-83</module>
         <module>cloud-alibaba-nacos-config-3377</module>
+        <module>cloud-alibaba-sentinel-8401</module>
+        <module>seata-order-service-2001</module>
+        <module>seata-common-api</module>
+        <module>seata-storage-service-2002</module>
+        <module>seata-account-service-2003</module>
+        <module>seata-teacher-storage-service-2002</module>
+        <module>seata-teacher-order-service-2001</module>
+        <module>seata-teacher-account-service-2003</module>
     </modules>
 
     <properties>

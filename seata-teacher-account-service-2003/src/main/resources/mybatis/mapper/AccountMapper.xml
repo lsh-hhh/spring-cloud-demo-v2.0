@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="my.lsh.cloud.dao.TeacherAccountDao">
+
+    <resultMap id="BaseResultMap" type="my.lsh.cloud.domain.AccountEntity">
+        <id column="id" property="id" jdbcType="BIGINT"></id>
+        <id column="user_id" property="userId" jdbcType="BIGINT"></id>
+        <id column="total" property="total" jdbcType="DECIMAL"></id>
+        <id column="used" property="used" jdbcType="DECIMAL"></id>
+        <id column="residue" property="residue" jdbcType="DECIMAL"></id>
+    </resultMap>
+
+    <update id="decrease" parameterType="my.lsh.cloud.domain.AccountEntity" >
+        update t_account set used = used + #{money}, residue = residue - #{money}
+        where user_id = #{userId}
+    </update>
+
+    <update id="update" parameterType="my.lsh.cloud.domain.AccountEntity" >
+        update t_account
+        <set>
+            <if test="#{userId != null || userId!= ''}"> user_id = #{userId},</if>
+            <if test="#{total != null || total!= ''}"> total = #{total},</if>
+            <if test="#{used != null || used!= ''}"> used = #{used},</if>
+            <if test="#{residue != null || residue!= ''}"> residue = #{residue},</if>
+        </set>
+        where id = #{id}
+    </update>
+</mapper>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="my.lsh.cloud.dao.TeacherOrderDao">
+
+    <resultMap id="BaseResultMap" type="my.lsh.cloud.domain.OrderEntity">
+        <id column="id" property="id" jdbcType="BIGINT"></id>
+        <id column="user_id" property="userId" jdbcType="BIGINT"></id>
+        <id column="product_id" property="productId" jdbcType="BIGINT"></id>
+        <id column="count" property="count" jdbcType="INTEGER"></id>
+        <id column="money" property="money" jdbcType="DECIMAL"></id>
+        <id column="status" property="status" jdbcType="INTEGER"></id>
+    </resultMap>
+
+    <insert id="create" parameterType="my.lsh.cloud.domain.OrderEntity" useGeneratedKeys="true" keyProperty="id">
+        <selectKey order="AFTER" keyProperty="id" resultType="long">select LAST_INSERT_ID()</selectKey>
+        insert t_order (id, user_id, product_id, count, money, status)
+            values(null, #{userId}, #{productId}, #{count}, #{money}, 0)
+    </insert>
+
+    <select id="findOne" resultMap="BaseResultMap">
+        select * from t_order where id = #{id}
+    </select>
+
+    <update id="update" parameterType="my.lsh.cloud.domain.OrderEntity" >
+        update t_order
+        <set>
+            <if test="#{userId != null || userId!= ''}"> user_id = #{userId},</if>
+            <if test="#{productId != null || productId!= ''}"> product_id = #{productId},</if>
+            <if test="#{count != null || count!= ''}"> count = #{count},</if>
+            <if test="#{money != null || money!= ''}"> money = #{money},</if>
+            <if test="#{status != null || status!= ''}"> status = #{status},</if>
+        </set>
+        where id = #{id}
+    </update>
+</mapper>

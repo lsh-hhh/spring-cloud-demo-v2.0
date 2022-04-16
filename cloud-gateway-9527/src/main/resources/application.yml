@@ -14,10 +14,10 @@ spring:
           uri: lb://cloud-provider-payment  # 使用微服务名称进行路由
           predicates:
             - Path=/payment/get/**        # 断言，路径匹配则进行路由
-#            - After=2020-03-08T 10:59:34.102+08:00[Asia/Shanghai] # 生效时间 在指定日期之后
+#            - After=2020-03-08T 10:59:34.102+08:00[Asia/Shanghai] # 生效时间 在指定日期之后 ZonedDateTime
 #            - Before=2020-03-08T 10:59:34.102+08:00[Asia/Shanghai] # 生效时间 在指定日期之前
 #            - Between=2020-03-08T 10:59:34.102+08:00[Asia/Shanghai] ,  2020-03-08T 10:59:34.102+08:00[Asia/Shanghai] # 生效时间 在指定日期之内
-#            - Cookie=username,atguigu    #Cookie是username=zhangshuai才能访问
+#            - Cookie=username,zhangshuai    #Cookie是username=zhangshuai才能访问
 #            - Query=username, \d+ #要有参数名称并且是正整数才能路由
 #            - Method=GET  # 指定方法可访问
 #            - Host=**.atguigu.com # 主机地址带指定主机名

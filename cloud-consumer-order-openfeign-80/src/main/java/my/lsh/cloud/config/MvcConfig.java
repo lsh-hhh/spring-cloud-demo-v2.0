@@ -16,7 +16,7 @@ public class MvcConfig {
     }
 
     @Bean
-    public Logger.Level openFeignLevem(){
+    public Logger.Level openFeignLeve(){
         return Logger.Level.FULL;
     }
 }

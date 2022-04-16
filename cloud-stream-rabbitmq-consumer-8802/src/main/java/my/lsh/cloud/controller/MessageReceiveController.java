@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
 
-@Component
+//@Component
 @EnableBinding(Sink.class)
 public class MessageReceiveController {
 

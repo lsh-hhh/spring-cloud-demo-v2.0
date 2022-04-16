@@ -21,7 +21,8 @@ spring:
           destination: studyExchange  # 要使用的exchange名称
           content-type: application/json
           binder: defaultRabbit       # 要绑定消息
-          group: consumer
+          group: consumer-B
+#          group: consumer
 eureka:
   client:
     service-url:
